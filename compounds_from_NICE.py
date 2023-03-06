@@ -32,6 +32,8 @@ for row in tqdm(range(len(compounds_list))):
             formula = line.split()[1]
             compounds_list['formula'].iloc[row] = formula
 
+# save to csv
+compounds_list.to_csv('data/compounds_list_KEGG.csv', index=None)
 '''
 compounds_list = REST.kegg_list('compound').read()
 compounds_list = to_df(compounds_list)
@@ -55,6 +57,4 @@ for row in tqdm(range(len(compounds_list))):
             formula = line.split()[1]
             compounds_list['formula'].iloc[row] = formula
             
-# save to csv
-compounds_list.to_csv('data/compounds_list_KEGG.csv', index=None)
 '''
